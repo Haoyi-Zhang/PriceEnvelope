@@ -1,0 +1,122 @@
+{
+  "sharp_instances": 15,
+  "maxcut_instances": 75,
+  "negative_controls": {
+    "coherent_envelope": "8/3",
+    "two_stamp_envelope": "4",
+    "capacity": "3",
+    "false_scalar_bound_rejected": true
+  },
+  "sharp_values": [
+    {
+      "d": 1,
+      "theta": "1/4",
+      "coherent": "32/15",
+      "rectangular": "8/3",
+      "ratio": "5/4"
+    },
+    {
+      "d": 1,
+      "theta": "1/2",
+      "coherent": "8/3",
+      "rectangular": "4",
+      "ratio": "3/2"
+    },
+    {
+      "d": 1,
+      "theta": "3/4",
+      "coherent": "32/7",
+      "rectangular": "8",
+      "ratio": "7/4"
+    },
+    {
+      "d": 2,
+      "theta": "1/4",
+      "coherent": "62/15",
+      "rectangular": "16/3",
+      "ratio": "40/31"
+    },
+    {
+      "d": 2,
+      "theta": "1/2",
+      "coherent": "14/3",
+      "rectangular": "8",
+      "ratio": "12/7"
+    },
+    {
+      "d": 2,
+      "theta": "3/4",
+      "coherent": "46/7",
+      "rectangular": "16",
+      "ratio": "56/23"
+    },
+    {
+      "d": 3,
+      "theta": "1/4",
+      "coherent": "17536/2145",
+      "rectangular": "32/3",
+      "ratio": "715/548"
+    },
+    {
+      "d": 3,
+      "theta": "1/2",
+      "coherent": "928/105",
+      "rectangular": "16",
+      "ratio": "105/58"
+    },
+    {
+      "d": 3,
+      "theta": "3/4",
+      "coherent": "384/35",
+      "rectangular": "32",
+      "ratio": "35/12"
+    },
+    {
+      "d": 4,
+      "theta": "1/4",
+      "coherent": "5122/315",
+      "rectangular": "64/3",
+      "ratio": "3360/2561"
+    },
+    {
+      "d": 4,
+      "theta": "1/2",
+      "coherent": "86/5",
+      "rectangular": "32",
+      "ratio": "80/43"
+    },
+    {
+      "d": 4,
+      "theta": "3/4",
+      "coherent": "7654/385",
+      "rectangular": "64",
+      "ratio": "12320/3827"
+    },
+    {
+      "d": 5,
+      "theta": "1/4",
+      "coherent": "8428032/260015",
+      "rectangular": "128/3",
+      "ratio": "260015/197532"
+    },
+    {
+      "d": 5,
+      "theta": "1/2",
+      "coherent": "305024/9009",
+      "rectangular": "64",
+      "ratio": "9009/4766"
+    },
+    {
+      "d": 5,
+      "theta": "3/4",
+      "coherent": "32803328/873103",
+      "rectangular": "128",
+      "ratio": "873103/256276"
+    }
+  ],
+  "wall_seconds": 0.07861574399998972,
+  "cpu_seconds": 0.078618156,
+  "peak_rss_kib": 92452,
+  "reported_swaps": 0,
+  "workers": 1
+}

@@ -1,0 +1,176 @@
+{
+  "record_scope": "Clean working-tree candidate immediately before final archive creation. The delivered archives are subsequently re-extracted and rerun; the measurements below are observational and are not part of exact-result equality.",
+  "date_local": "2026-09-16",
+  "timezone": "UTC",
+  "clean_standalone_reproduction": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python reproduce.py --output verified --check-against results",
+    "exit_status": 0,
+    "counts": {
+      "zero_radius_cases": 6,
+      "general_palette_evaluations": 9,
+      "general_palette_inequalities": 12,
+      "sampling_comparisons": 6,
+      "palette_extrema": 33,
+      "palette_general_cases": 72,
+      "palette_direct_checks": 8,
+      "five_stamp_constructions": 39,
+      "five_stamp_spectral_certificates": 1,
+      "two_stamp_extremizers": 12,
+      "two_stamp_general_cases": 48,
+      "weighted_deletion_cases": 285,
+      "sharp_extremizers": 18,
+      "general_rational_instances": 240,
+      "maxcut_graphs": 1099,
+      "coloring_stamp_cases": 285,
+      "fixed_r_saturation_reductions": 225,
+      "independent_copy_oracles": 9,
+      "covering_constructions": 15,
+      "exact_covering_minima": 3,
+      "rejected_certificate_mutations": 20,
+      "boundary_certificates": 3,
+      "certificate_oracle_cases": 72,
+      "transition_orders": 7404,
+      "contraction_schedules": 4,
+      "controller_runs": 12,
+      "controller_slots": 768,
+      "controller_intermediate_states": 4608,
+      "correlated_epochs": 8,
+      "correlated_transitions": 8,
+      "correlated_intermediate_states": 65536,
+      "correlated_stamp_tuples": 512,
+      "variational_grids": 22,
+      "support_two_sandwich_checks": 15,
+      "scholarly_references": 56,
+      "literature_calibration_rows": 56
+    },
+    "internal_metrics": {
+      "wall_seconds": 21.401746539999976,
+      "cpu_seconds": 21.401900770999998,
+      "peak_rss_kib": 117940,
+      "reported_swaps": 0,
+      "workers": 1,
+      "exit_status": 0
+    },
+    "external_measurement": {
+      "external_wall_seconds": 22.6,
+      "external_peak_rss_kib": 117940,
+      "reported_swaps": 0,
+      "exit_status": 0
+    },
+    "exact_reference_comparison_passed": true,
+    "standalone_requires_paper_or_template": false
+  },
+  "bibliography_reconciliation": {
+    "reference_count": 56,
+    "unique_cited_keys": 56,
+    "citation_occurrences": 65,
+    "uncited_entries": 0,
+    "missing_entries": 0,
+    "external_resource_rows": 59,
+    "scholarly_resource_rows": 56,
+    "literature_calibration_rows": 56,
+    "minimum_required": 55,
+    "full_text_core_rows": 23,
+    "reference_audit": {
+      "scholarly_references": 56,
+      "source_ledger_rows": 59,
+      "literature_calibration_rows": 56,
+      "minimum_references": 55
+    }
+  },
+  "independent_certificate_oracles": {
+    "cases": 72,
+    "dimensions": "1 through 6",
+    "comparison": "constructor and independent checker versus direct full-cube enumeration",
+    "exact_capacity_accepted": true,
+    "capacity_minus_one_hundredth_rejected": true
+  },
+  "correlation_experiment": {
+    "separate_result_file": "results/correlated_pipeline.json",
+    "stamp_tuple_evaluations": 512,
+    "coherent_three_stamp_envelope": "21",
+    "rowwise_envelope": "24",
+    "capacity": "21",
+    "correlation_aware_gamma": "1",
+    "rowwise_gamma": "7/8",
+    "epochs": 8,
+    "intermediate_states": 65536,
+    "maximum_intermediate_load": "21",
+    "unbarriered_mix_load": "24"
+  },
+  "certificate_checks": [
+    {
+      "command": "python check_certificate.py results/certificate_model.json results/certificate.json --capacity 9/2",
+      "expected": "accept",
+      "observed": "CERTIFIED upper bound: 9/2",
+      "exit_status": 0
+    },
+    {
+      "command": "python check_certificate.py results/certificate_model.json results/certificate.json --capacity 449/100",
+      "expected": "reject",
+      "observed": "REJECTED: capacity not certified",
+      "exit_status": 1
+    }
+  ],
+  "figure_reproduction": {
+    "command": "python export_figures.py --output verified-figures",
+    "controller_errors_csv_matches_delivered": true,
+    "reserve_factors_csv_matches_delivered": true,
+    "reserve_factor_columns": [
+      "K21",
+      "K22",
+      "K23",
+      "K24",
+      "K25"
+    ]
+  },
+  "pilot_reproduction": {
+    "command": "python tests/pilot.py --output verified-pilot.json",
+    "exit_status": 0,
+    "sharp_instances": 15,
+    "maxcut_instances": 75,
+    "negative_control_passed": true
+  },
+  "paper_rebuild": {
+    "command": "python paper/build.py --template /path/to/TEMPLATE(20260911-054525).zip --output rebuilt.pdf",
+    "exit_status": 0,
+    "pages": 41,
+    "reference_audit_passed": true,
+    "overfull_boxes": false,
+    "unresolved_references_or_citations": false,
+    "rendered_pages_visually_inspected": 41
+  },
+  "layout_reconciliation": {
+    "renderer": "pdfium via render_pdf.py at 160 dpi",
+    "pages_rendered": 41,
+    "pages_visually_inspected": 41,
+    "full_size_pages_rechecked": [
+      14,
+      15,
+      16,
+      17,
+      37,
+      38,
+      39,
+      41
+    ],
+    "last_reference_bottom_pdf_points": 650.4751586914062,
+    "page_height_pdf_points": 720.0,
+    "overlap_or_clipping_found": false,
+    "broken_glyph_found": false,
+    "unresolved_reference_or_citation_found": false,
+    "overfull_box_found_by_build": false
+  },
+  "packet_structure": {
+    "full_project_root_entries": [
+      "CURRENT-STATE.md",
+      "artifact",
+      "paper",
+      "research-plan.md"
+    ],
+    "standalone_root": "primal-dual-safety-delayed",
+    "nested_archives": false,
+    "python_cache_files": false
+  },
+  "interpretation": "Successful finite checking and reproduction support only the declared evidence. They are not independent peer review, proof-assistant verification, packet-network measurement, trained-predictor evidence, or deployment validation."
+}

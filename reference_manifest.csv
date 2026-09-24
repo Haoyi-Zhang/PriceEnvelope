@@ -1,0 +1,57 @@
+key,title,year,publication_type,venue,scholarly_url,reading_status
+allenzhu2015,Using Optimization to Break the Epsilon Barrier: A Faster and Simpler Width-Independent Algorithm for Solving Positive Linear Programs in Parallel,2015,inproceedings,Proc. 26th ACM-SIAM Symp. Discrete Algorithms,https://doi.org/10.1137/1.9781611973730.95,publisher metadata and paper examined
+alon2025,Maximum Shattering,2025,article,J. Combin. Des.,https://doi.org/10.1002/jcd.22005,full-text adjacent calibration
+ames2017,Control Barrier Function Based Quadratic Programs for Safety Critical Systems,2017,article,IEEE Trans. Automat. Control,https://doi.org/10.1109/TAC.2016.2638961,substantive full-text examination
+antoniadis2020,Online Metric Algorithms with Untrusted Predictions,2020,inproceedings,Proc. 37th Int. Conf. Mach. Learn.,https://proceedings.mlr.press/v119/antoniadis20a.html,official proceedings paper examined
+awerbuch2009,Stateless Distributed Gradient Descent for Positive Linear Programs,2009,article,SIAM J. Comput.,https://doi.org/10.1137/080717651,full-text calibration
+bamas2020,The Primal-Dual Method for Learning Augmented Algorithms,2020,inproceedings,Adv. Neural Inf. Process. Syst.,https://arxiv.org/abs/2010.11632,substantive full-text examination
+bental1998,Robust Convex Optimization,1998,article,Math. Oper. Res.,https://doi.org/10.1287/moor.23.4.769,publisher metadata and substantive theorem-level examination
+bertsekas1983,Distributed Asynchronous Computation of Fixed Points,1983,article,Math. Program.,https://doi.org/10.1007/BF02591967,substantive full-text examination
+bertsekas1985,A Unified Framework for Primal-Dual Methods in Minimum Cost Network Flow Problems,1985,article,Math. Program.,https://doi.org/10.1007/BF01586087,substantive full-text examination
+bertsekas1989,Parallel and Distributed Computation: Numerical Methods,1989,book,Prentice-Hall,https://faculty.engineering.asu.edu/bertsekas/books/parallel-and-distributed-computation-numerical-methods/,official author record and selected relevant chapters examined
+bertsimas2004,The Price of Robustness,2004,article,Oper. Res.,https://doi.org/10.1287/opre.1030.0065,substantive full-text examination
+bertsimas2010,Finite Adaptability in Linear Optimization,2010,article,IEEE Trans. Automat. Control,https://doi.org/10.1109/TAC.2010.2049764,substantive full-text examination
+bienstock2006,Approximating Fractional Packings and Coverings in {$O(1/\epsilon)$} Iterations,2006,article,SIAM J. Comput.,https://doi.org/10.1137/S0097539705447293,full-text calibration
+blanchini1999,Set Invariance in Control,1999,article,Automatica,https://doi.org/10.1016/S0005-1098(99)00113-2,substantive full-text examination
+bodlaender1996,A Linear-Time Algorithm for Finding Tree-Decompositions of Small Treewidth,1996,article,SIAM J. Comput.,https://doi.org/10.1137/S0097539793251219,full-text calibration
+chazan1969,Chaotic Relaxation,1969,article,Linear Algebra Appl.,https://doi.org/10.1016/0024-3795(69)90028-7,publisher metadata and abstract examined
+chekuri2013,The All-or-Nothing Multicommodity Flow Problem,2013,article,SIAM J. Comput.,https://doi.org/10.1137/100796820,full-text calibration
+chekuri2015,Multicommodity Flows and Cuts in Polymatroidal Networks,2015,article,SIAM J. Comput.,https://doi.org/10.1137/130906830,full-text calibration
+chiang2007,Layering as Optimization Decomposition: A Mathematical Theory of Network Architectures,2007,article,Proc. IEEE,https://doi.org/10.1109/JPROC.2006.887322,substantive full-text examination
+colbourn2004,Combinatorial Aspects of Covering Arrays,2004,article,Le Matematiche,https://lematematiche.dmi.unict.it/index.php/lematematiche/article/view/166,full text examined; not counted as original influential paper
+fleischer2000,Approximating Fractional Multicommodity Flow Independent of the Number of Commodities,2000,article,SIAM Journal on Discrete Math.,https://doi.org/10.1137/S0895480199355754,substantive full-text examination
+fomin2008,Exact Algorithms for Treewidth and Minimum Fill-In,2008,article,SIAM J. Comput.,https://doi.org/10.1137/050643350,full-text calibration
+fomin2024,Fast {FPT}-Approximation of Branchwidth,2024,article,SIAM J. Comput.,https://doi.org/10.1137/22M153937X,full-text calibration
+fu2022,Learning-{NUM}: Network Utility Maximization With Unknown Utility Functions and Queueing Delay,2022,article,IEEE/ACM Trans. Netw.,https://doi.org/10.1109/TNET.2022.3182890,substantive full-text examination
+garey1976,Some Simplified {NP}-Complete Graph Problems,1976,article,Theoret. Comput. Sci.,https://doi.org/10.1016/0304-3975(76)90059-1,full text examined
+garg2007,Faster and Simpler Algorithms for Multicommodity Flow and Other Fractional Packing Problems,2007,article,SIAM J. Comput.,https://doi.org/10.1137/S0097539704446232,full-text calibration
+ghaffari2018,Near-Optimal Distributed Maximum Flow,2018,article,SIAM J. Comput.,https://doi.org/10.1137/17M113277X,full-text calibration
+hanasusanto2015,{K}-Adaptability in Two-Stage Robust Binary Programming,2015,article,Oper. Res.,https://doi.org/10.1287/opre.2015.1392,substantive full-text examination
+hartman2004,Problems and Algorithms for Covering Arrays,2004,article,Discrete Math.,https://doi.org/10.1016/j.disc.2003.11.029,publisher metadata and paper examined
+hendrickson2023,Totally Asynchronous Primal-Dual Convex Optimization in Blocks,2023,article,IEEE Trans. Control Netw. Syst.,https://doi.org/10.1109/TCNS.2022.3203366,full text examined
+hlineny2008,Finding Branch-Decompositions and Rank-Decompositions,2008,article,SIAM J. Comput.,https://doi.org/10.1137/070685920,full-text calibration
+hutchinson2024,Safe Pricing Mechanisms for Distributed Resource Allocation With Bandit Feedback,2024,article,IEEE Trans. Control Netw. Syst.,https://doi.org/10.1109/TCNS.2024.3372143,substantive full-text examination
+kelly1998,"Rate Control for Communication Networks: Shadow Prices, Proportional Fairness and Stability",1998,article,J. Oper. Res. Soc.,https://doi.org/10.1057/palgrave.jors.2600523,full-text influential calibration
+klein2015,On the Number of Iterations for {Dantzig--Wolfe} Optimization and Packing-Covering Approximation Algorithms,2015,article,SIAM J. Comput.,https://doi.org/10.1137/12087222X,full-text calibration
+kleitman1973,Families of {$k$}-Independent Sets,1973,article,Discrete Math.,https://doi.org/10.1016/0012-365X(73)90098-8,full-text influential calibration
+korhonen2023,A Single-Exponential Time 2-Approximation Algorithm for Treewidth,2023,article,SIAM J. Comput.,https://doi.org/10.1137/22M147551X,full-text calibration
+low1999,"Optimization Flow Control, {I}: Basic Algorithm and Convergence",1999,article,IEEE/ACM Trans. Netw.,https://doi.org/10.1109/90.811451,full-text influential calibration
+low2002,Understanding {Vegas}: A Duality Model,2002,article,J. ACM,https://doi.org/10.1145/506147.506152,full text examined
+low2003,A Duality Model of {TCP} and Queue Management Algorithms,2003,article,IEEE/ACM Trans. Netw.,https://doi.org/10.1109/TNET.2003.815297,substantive full-text examination
+luby1993,A Parallel Approximation Algorithm for Positive Linear Programming,1993,inproceedings,Proc. 25th ACM Symp. Theory Comput.,https://doi.org/10.1145/167088.167211,publisher metadata and paper examined
+lykouris2018,Competitive Caching with Machine Learned Advice,2018,inproceedings,Proc. 35th Int. Conf. Mach. Learn.,https://proceedings.mlr.press/v80/lykouris18a.html,official proceedings paper examined
+mcconnell2011,Certifying Algorithms,2011,article,Comput. Sci. Rev.,https://doi.org/10.1016/j.cosrev.2010.09.009,substantive full-text examination
+palomar2006,A Tutorial on Decomposition Methods for Network Utility Maximization,2006,article,IEEE J. Sel. Areas Commun.,https://doi.org/10.1109/JSAC.2006.879350,substantive full-text examination
+peng2016,{ARock}: An Algorithmic Framework for Asynchronous Parallel Coordinate Updates,2016,article,SIAM J. Sci. Comput.,https://doi.org/10.1137/15M1024950,substantive full-text examination
+plotkin1995,Fast Approximation Algorithms for Fractional Packing and Covering Problems,1995,article,Math. Oper. Res.,https://doi.org/10.1287/moor.20.2.257,full-text influential calibration
+sen2026,Delay-Robust Primal-Dual Dynamics for Distributed Optimization,2026,article,IEEE Control Syst. Lett.,https://doi.org/10.1109/LCSYS.2026.3698431,substantive full-text examination
+seroussi1988,Vector Sets for Exhaustive Testing of Logic Circuits,1988,article,IEEE Trans. Inform. Theory,https://doi.org/10.1109/18.6031,publisher metadata and theorem-level examination
+srinivasan1999,Improved Approximation Guarantees for Packing and Covering Integer Programs,1999,article,SIAM J. Comput.,https://doi.org/10.1137/S0097539796314240,full-text calibration
+tang2022,Running Primal-Dual Gradient Method for Time-Varying Nonconvex Problems,2022,article,SIAM J. Control Optim.,https://doi.org/10.1137/20M1371063,full text examined
+tsitsiklis1986,Distributed Asynchronous Deterministic and Stochastic Gradient Optimization Algorithms,1986,article,IEEE Trans. Automat. Control,https://doi.org/10.1109/TAC.1986.1104412,substantive full-text examination
+turan2022,Safe Dual Gradient Method for Network Utility Maximization Problems,2022,inproceedings,Proc. 61st IEEE Conf. Decision Control,https://doi.org/10.1109/CDC51059.2022.9992972,substantive full-text examination
+turan2024,Safe Dynamic Pricing for Nonstationary Network Resource Allocation,2024,inproceedings,Proc. 6th Annu. Learn. Dyn. Control Conf.,https://proceedings.mlr.press/v242/turan24a.html,substantive full-text examination
+turan2025,A Safe First-Order Method for Pricing-Based Resource Allocation in Safety-Critical Networks,2025,article,IEEE Trans. Control Netw. Syst.,https://doi.org/10.1109/TCNS.2024.3488516,substantive full-text examination
+wei2020,Optimal Robustness-Consistency Trade-offs for Learning-Augmented Online Algorithms,2020,inproceedings,Adv. Neural Inf. Process. Syst.,https://proceedings.neurips.cc/paper/2020/hash/5bd844f11fa520d54fa5edec06ea2507-Abstract.html,official proceedings paper examined
+young2001,Sequential and Parallel Algorithms for Mixed Packing and Covering,2001,inproceedings,Proc. 42nd IEEE Symp. Found. Comput. Sci.,https://doi.org/10.1109/SFCS.2001.959930,publisher metadata and paper examined
+zhang2014,Asynchronous Distributed {ADMM} for Consensus Optimization,2014,inproceedings,Proc. 31st Int. Conf. Mach. Learn.,https://proceedings.mlr.press/v32/zhange14.html,substantive full-text examination
