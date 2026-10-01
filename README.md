@@ -17,6 +17,14 @@ The first command regenerates all deterministic evidence and compares the parsed
 
 Expected certificate output is `CERTIFIED upper bound: 9/2`. Running the same checker with capacity `449/100` must exit nonzero with `REJECTED: capacity not certified`; this deliberate rejection is a negative test.
 
+An aggregate delivered-check verifier is also available:
+
+```sh
+python -B verify_release.py
+```
+
+It binds `results/certificate_model.json` and `results/certificate.json` by their exact names, runs an order-reversal fixture for the former wildcard hazard, reruns the main reproduction, checks the positive and strict-negative certificate queries, exercises the malformed-input and tampered-reference tests, and exactly checks the two certificate-slack examples stated after Proposition 6.8. The supplied packet does **not** contain the previously referenced `independent_random_exact_cases.py` implementation or a frozen result for 128 such cases. Accordingly, `verify_release.py` neither executes nor reports those 128 cases and prints the omission explicitly. This missing supplemental asset does not change the documented main reproduction command above, which is independently run and compared with `results`.
+
 The suite includes 33 complete-pair palette extrema, eight direct stamp-tuple checks, 39 explicit five-stamp constructions plus an exact line-graph spectral certificate, 15 all-stamp support-two sandwich checks, 1,099 Max-Cut identities, 285 coloring/stamp comparisons, 225 fixed-stamp reduction checks, 285 weighted-deletion cases, 22 variational grids, 72 constructor/checker/brute-force certificate oracle cases, 20 rejected certificate mutations, and 7,404 safe transition orders. The two-link pipeline has 12 runs, 768 certified targets, and 4,608 intermediate states. A separate correlation-aware experiment enumerates 512 stamp triples and 65,536 two-phase intermediate states across eight epochs. See `inputs/case-specification.md` for all counts and selection rules.
 
 ## Model and scientific scope
