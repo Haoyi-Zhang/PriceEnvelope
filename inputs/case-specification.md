@@ -1,6 +1,6 @@
 # Deterministic scientific inputs
 
-There are no external experimental data. Inputs are rational reciprocal-affine rows and finite synthetic graphs. All realized numerical instances, or their complete graph/codeword specification, are retained in `results/exact_results.json`; controller trajectories are retained in `results/control_pipeline.json` and `results/correlated_pipeline.json`. Generator source is delivered. These are generated falsification examples, not production workloads.
+There are no external experimental data. Inputs are rational reciprocal-affine rows and finite synthetic graphs. Explicit inputs and graph/codeword specifications are retained in `results/exact_results.json`. Its 72 certificate-oracle cases retain result summaries; their numerical inputs are reconstructed from the supplied generator and seed. Controller trajectories are retained in `results/control_pipeline.json` and `results/correlated_pipeline.json`. These are generated falsification examples, not production workloads.
 
 The main selection uses base seed 20260911. One-stamp generic cases use that seed; transition target pairs use base+1; two-stamp cases use base+2; support-two palette inequalities use base+3; generic palette/sampling checks use base+4; certificate-oracle cases use base+5. No seed search for favorable performance was used. Parsed comparison against the retained exact JSON fails if a future runtime generates different cases.
 
