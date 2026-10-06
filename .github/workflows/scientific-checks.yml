@@ -1,0 +1,65 @@
+name: Scientific finite checks
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  finite-checks:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONHASHSEED: '0'
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Run bounded fixed-input gates from the standalone repository root
+        shell: bash
+        run: |
+          mkdir -p "$RUNNER_TEMP/p105-scientific"
+          timeout --kill-after=10s 420s bash --noprofile --norc -euo pipefail <<'CHECKS' 2>&1 | tee "$RUNNER_TEMP/p105-scientific/run.log"
+          ulimit -v 1048576
+          ulimit -t 300
+          raw="$RUNNER_TEMP/p105-scientific"
+          python -B tests/check_integrity.py --output "$raw/integrity" 2>&1 | tee "$raw/integrity.log"
+          python -B reproduce.py --output "$raw/reproduced" --check-against results 2>&1 | tee "$raw/reproduction.log"
+          python -B check_certificate.py results/certificate_model.json results/certificate.json --capacity 9/2 2>&1 | tee "$raw/certificate-positive.log"
+          grep -Fx 'CERTIFIED upper bound: 9/2' "$raw/certificate-positive.log"
+          if python -B check_certificate.py results/certificate_model.json results/certificate.json --capacity 449/100 >"$raw/certificate-negative.log" 2>&1; then
+            echo 'Below-bound capacity was accepted'; exit 1
+          fi
+          cat "$raw/certificate-negative.log"
+          grep -Fx 'REJECTED: capacity not certified' "$raw/certificate-negative.log"
+          python -B - "$raw" <<'PY'
+          import json, sys
+          from pathlib import Path
+          root = Path(sys.argv[1]) / 'tampered-reference'
+          root.mkdir()
+          data = json.loads(Path('results/exact_results.json').read_text(encoding='utf-8'))
+          data['counts']['zero_radius_cases'] += 1
+          (root / 'exact_results.json').write_text(json.dumps(data, indent=2) + '\n', encoding='utf-8')
+          PY
+          if python -B reproduce.py --output "$raw/tampered-run" --check-against "$raw/tampered-reference" >"$raw/reference-negative.log" 2>&1; then
+            echo 'Changed exact reference was accepted'; exit 1
+          fi
+          cat "$raw/reference-negative.log"
+          grep -F 'exact result content differs from delivered evidence' "$raw/reference-negative.log"
+          CHECKS
+      - name: Upload raw outputs and owned input fixtures even on failure
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: p105-scientific-raw
+          path: ${{ runner.temp }}/p105-scientific/
+          if-no-files-found: error
+          retention-days: 14
