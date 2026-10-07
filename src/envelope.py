@@ -124,14 +124,17 @@ def make_certificate(data: dict, bags: list[list[int]], parents: list[int],
     tables: list[dict[str, Q]] = [{} for _ in bs]
     for t in reversed(range(len(bs))):
         separator = () if t == 0 else tuple(sorted(set(bs[t]) & set(bs[parents[t]])))
-        local = [rows[i] for i, own in enumerate(owners) if own == t]
+        local = [(a, tuple((i, coefficient) for i, coefficient in enumerate(b) if coefficient), w)
+                 for row, own in zip(rows, owners) if own == t
+                 for a, b, w in (row,)]
+        child_separators = [(child, tuple(sorted(set(bs[child]) & set(bs[t]))))
+                            for child in children[t]]
         for sign in vertices(len(bs[t])):
             assign = dict(zip(bs[t], sign))
             total = Q(0)
-            for a, b, w in local:
-                total += w/(a + sum((b[i]*assign[i] for i in range(d) if b[i]), Q(0)))
-            for child in children[t]:
-                sep_child = tuple(sorted(set(bs[child]) & set(bs[t])))
+            for a, support, w in local:
+                total += w/(a + sum((coefficient*assign[i] for i, coefficient in support), Q(0)))
+            for child, sep_child in child_separators:
                 key_child = ",".join(str(assign[i]) for i in sep_child)
                 total += tables[child][key_child]
             key = ",".join(str(assign[i]) for i in separator)
@@ -245,4 +248,3 @@ def support_two_sandwich(stamps: int, theta: Q) -> tuple[Q, Q]:
     lower = 1 / (1 - theta / Q(2**stamps))
     upper = 1 / (1 - theta / Q(2 * clique))
     return lower, upper
-

@@ -33,6 +33,26 @@ The `Scientific finite checks` workflow runs on pushes to `main` or manual dispa
 
 ## Model and scientific scope
 
+The current constructor prepares each owned row's ordered nonzero coefficients
+and each child separator once per bag, outside sign enumeration. Every corner,
+exact rational sum, message key, and checker inequality is retained; this is
+fixed-structure preparation, not a new algorithm for unrestricted safety. The
+four portable regression methods compare every conditional subtree table with
+an independent dense definition oracle on the retained 72-case generator and
+six boundary/decomposition cases, plus checker controls and a width-16 constant
+case. From this repository root run:
+
+```sh
+python -B -m unittest discover -s tests -p test_prepared_messages.py -v
+```
+
+The existing scientific workflow includes this step without replacing any old
+gate. Frozen `results/`, resource observations and the delivered proof remain
+unchanged evidence from before this preparation change. Local finite agreement
+does not certify the full reproduction or establish a measured speedup. The
+release manifest binds current packaged bytes; updating its changed source/test
+entries is not a refresh of frozen experiment evidence.
+
 A row is `weight / (a + b dot z)` over one latent box `[-1,1]^d`, with `weight > 0` and `a > sum(abs(b))`. The coherent envelope uses one common `z`; the r-stamp envelope permits at most r latent versions of this same affine family and an adverse row-to-version assignment; the rectangular envelope maximizes every row independently. This is an information contract, not a claim that every stamp tuple is reachable by a feedback law.
 
 The paper proves sharp reserve-factor characterizations, explicit one/two-stamp and support-two three/four/five-stamp constants, an all-stamp support-two sandwich, a dimension-free approximate-recovery versus logarithmic exact-saturation separation, finite complete-family formulas, a graph saturation threshold with a fixed-stamp complexity dichotomy and weighted deficits, a fixed-radius hardness reduction, and sound local upper certificates. It also proves a safe command transition and a separate sufficient delayed contraction result. Standard packing, column-distribution, coloring, decomposition, robust-optimization, and asynchronous-convergence precedents are attributed and calibrated in `literature_calibration.csv`; their use alone is not claimed as novel.

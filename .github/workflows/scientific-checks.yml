@@ -32,6 +32,7 @@ jobs:
           ulimit -t 300
           raw="$RUNNER_TEMP/p105-scientific"
           python -B tests/check_integrity.py --output "$raw/integrity" 2>&1 | tee "$raw/integrity.log"
+          python -B -m unittest discover -s tests -p test_prepared_messages.py -v 2>&1 | tee "$raw/prepared-messages.log"
           python -B reproduce.py --output "$raw/reproduced" --check-against results 2>&1 | tee "$raw/reproduction.log"
           python -B check_certificate.py results/certificate_model.json results/certificate.json --capacity 9/2 2>&1 | tee "$raw/certificate-positive.log"
           grep -Fx 'CERTIFIED upper bound: 9/2' "$raw/certificate-positive.log"
