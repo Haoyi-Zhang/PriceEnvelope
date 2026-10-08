@@ -160,20 +160,63 @@ def verify_manifest(root: Path) -> int:
     return checked
 
 
-def main() -> None:
-    root = Path(__file__).resolve().parent
+def _root_git_metadata(path: Path) -> bool:
+    """Recognize a checkout's metadata directory or worktree gitfile, not links."""
+    if path.is_symlink():
+        return False
+    if path.is_dir():
+        return (
+            (path / "HEAD").is_file()
+            and (path / "objects").is_dir()
+            and (path / "refs").is_dir()
+        )
+    if path.is_file() and path.stat().st_size <= 4096:
+        try:
+            marker = path.read_text(encoding="utf-8").strip()
+        except UnicodeError:
+            return False
+        # Do not follow the gitdir target; it is outside the release payload.
+        return (
+            marker.startswith("gitdir: ")
+            and bool(marker[len("gitdir: "):].strip())
+            and "\n" not in marker
+            and "\r" not in marker
+        )
+    return False
+
+
+def check_release_hygiene(root: Path) -> None:
+    """Scan the payload without descending into recognized root Git metadata."""
+    root = root.resolve()
+
+    def walk_error(error: OSError) -> None:
+        raise error
 
     bad: list[str] = []
-    for path in root.rglob("*"):
-        relative = path.relative_to(root)
-        if path.is_symlink():
-            bad.append("symlink:" + str(relative))
-        if any(part in relative.parts for part in (".git", "__pycache__")):
-            bad.append("generated:" + str(relative))
-        if path.suffix == ".pyc":
-            bad.append("generated:" + str(relative))
+    for directory, subdirectories, files in os.walk(
+        root, topdown=True, followlinks=False, onerror=walk_error
+    ):
+        parent = Path(directory)
+        for name in list(subdirectories) + files:
+            path = parent / name
+            relative = path.relative_to(root)
+            if parent == root and name == ".git" and _root_git_metadata(path):
+                if name in subdirectories:
+                    subdirectories.remove(name)
+                continue
+            if path.is_symlink():
+                bad.append("symlink:" + str(relative))
+            if any(part in relative.parts for part in (".git", "__pycache__")):
+                bad.append("generated:" + str(relative))
+            if path.suffix == ".pyc":
+                bad.append("generated:" + str(relative))
     if bad:
         raise RuntimeError("release hygiene failure: " + repr(bad))
+
+
+def main() -> None:
+    root = Path(__file__).resolve().parent
+    check_release_hygiene(root)
 
     manifest_entries = verify_manifest(root)
     binding_fixture = check_reverse_order_binding_fixture()
