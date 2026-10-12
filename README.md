@@ -13,6 +13,14 @@ python export_figures.py --output reproduced-figures
 python tests/pilot.py --output reproduced-pilot.json
 ```
 
+For optional vector-PDF figure reproduction, install Matplotlib and run
+`python scripts/plot_figures.py`. The script reuses the exact table exporter and
+retained controller results, writes PDFs and CSV copies to `figures/`, and also
+copies identical assets to a sibling `paper/figures/` when present. It uses
+Matplotlib's bundled Computer Modern TTF fonts with embedded PDF text; no TeX
+font resolver or machine-specific font path is required. The standard-library
+scientific checks above do not acquire this optional plotting dependency.
+
 The first command regenerates all deterministic evidence and compares the parsed exact result with the delivered reference. Resource measurements are deliberately excluded from exact equality. The main runner is one process with a 1 GiB address-space limit and 120 CPU-second limit. The remaining commands check the worked certificate, export the two plot tables, and rerun the intake pilot.
 
 Expected certificate output is `CERTIFIED upper bound: 9/2`. Running the same checker with capacity `449/100` must exit nonzero with `REJECTED: capacity not certified`; this deliberate rejection is a negative test.
