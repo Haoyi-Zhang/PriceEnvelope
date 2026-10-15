@@ -7,6 +7,12 @@ import re
 
 MIN_REFERENCES = 55
 WORKFLOW_TYPES = {"official rules", "official template source", "official policy"}
+REFERENCE_IDENTITIES = {
+    "bertsimas2010": (
+        "Finite Adaptability in Multistage Linear Optimization",
+        "https://doi.org/10.1109/TAC.2010.2049764",
+    ),
+}
 
 
 def _normal(value: str) -> str:
@@ -41,6 +47,11 @@ def run_reference_audit(root: Path | None = None) -> dict[str, int]:
     if any("placeholder" in row["scholarly_url"].casefold() or "example." in row["scholarly_url"].casefold()
            for row in manifest):
         raise AssertionError("placeholder scholarly URL")
+    references = {row["key"]: row for row in manifest}
+    for key, (title, url) in REFERENCE_IDENTITIES.items():
+        row = references.get(key)
+        if row is None or row["title"] != title or row["scholarly_url"] != url:
+            raise AssertionError(f"reference identity mismatch: {key}")
 
     scholarly = [row for row in resources if row["resource_type"] not in WORKFLOW_TYPES]
     manifest_titles = {_normal(row["title"]) for row in manifest}
