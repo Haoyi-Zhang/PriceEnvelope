@@ -13,13 +13,22 @@ python export_figures.py --output reproduced-figures
 python tests/pilot.py --output reproduced-pilot.json
 ```
 
-For optional vector-PDF figure reproduction, install Matplotlib and run
-`python scripts/plot_figures.py`. The script reuses the exact table exporter and
-retained controller results, writes PDFs and CSV copies to `figures/`, and also
-copies identical assets to a sibling `paper/figures/` when present. It uses
+For optional vector-PDF figure reproduction, install `requirements-figures.txt`
+in a separate plotting environment and run
+`python -B scripts/plot_retained.py --output-dir reproduced-plots` with a fresh
+output directory. This isolated entry reads the retained tables in `results/`
+and does not export new data or copy assets into `figures/` or a sibling paper.
+It reuses the drawing functions in `scripts/plot_figures.py`; invoking that older
+entry directly writes retained figures and may copy them into a sibling paper.
+The renderer uses
 Matplotlib's bundled Computer Modern TTF fonts with embedded PDF text; no TeX
 font resolver or machine-specific font path is required. The standard-library
 scientific checks above do not acquire this optional plotting dependency.
+
+`python -B -S scripts/test_plot_sources.py -v` checks all retained theorem and
+controller coordinates and the protected output paths without Matplotlib or
+rendering PDFs. Use `--input-dir PATH` for another retained table directory;
+`--font-dir PATH` can select a local directory of Computer Modern TTF faces.
 
 The first command regenerates all deterministic evidence and compares the parsed exact result with the delivered reference. Resource measurements are deliberately excluded from exact equality. The main runner is one process with a 1 GiB address-space limit and 120 CPU-second limit. The remaining commands check the worked certificate, export the two plot tables, and rerun the intake pilot.
 

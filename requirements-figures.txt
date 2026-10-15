@@ -1,0 +1,2 @@
+# Optional isolated vector renderer only; scientific checks use the standard library.
+matplotlib
