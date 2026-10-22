@@ -1,2 +1,2 @@
 # Optional isolated vector renderer only; scientific checks use the standard library.
-matplotlib
+matplotlib==3.10.8
