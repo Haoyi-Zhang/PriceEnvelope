@@ -77,7 +77,8 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install the declared optional plotting environment
-        run: python -m pip install --only-binary=:all: -r requirements-figures.txt
+        run: |
+          python -m pip install --only-binary=:all: -r requirements-figures.txt
       - name: Verify retained coordinates and render both vector figures
         run: |
           python -B scripts/test_plot_sources.py -v
